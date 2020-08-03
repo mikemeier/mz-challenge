@@ -1,10 +1,14 @@
 <?php
 
-use MzChallenge\Controller;
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 
 require_once __DIR__.'/vendor/autoload.php';
 
-#var_dump($_SERVER);
+$requestUri = $_SERVER['REQUEST_URI'];
+$controllerResolver = new \MzChallenge\ControllerResolver($requestUri);
 
-$controller = new Controller();
-echo $controller->indexAction();
+$controllerAndAction = $controllerResolver->getControllerAndAction();
+
+$executer = new \MzChallenge\ControllerExecuter($controllerAndAction);
+$executer->execution();
