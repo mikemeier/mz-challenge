@@ -8,4 +8,10 @@
 * Dynamic Routing -> Correct controller/action
 * Templating System with variables
 * Get packages over composer (Templating? / Routing?)
-* 
+* Unit-Testing over GitLab
+
+## Challenge
+* Gallery / Photo-Upload
+* Guestbook
+* Login for Admins
+* Database (sqlite / mysql)
